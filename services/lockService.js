@@ -18,14 +18,6 @@ exports.requestLock = function(client, server) {
       client.subscribe("my channel");
       client.on("message", (channel, message) => {
         console.log(`Sub channel "${channel}": ${message}`);
-
-        // setTimeout(function() {
-        //   lock.release(function(err) {
-        //     console.log("Release key");
-        //     client.unsubscribe();
-        //     if (err) return console.log(err.message);
-        //   });
-        // }, 20000);
       });
     })
     .catch(redisLock.LockAcquisitionError, function(err) {
