@@ -6,12 +6,12 @@ const redisService = require("../services/redisService");
 
 const app = express();
 
-clientSub2.subscribe("my channel");
-
 app.listen(process.env.PORT_SERVER_SUB2, () => {
   console.log("Server Sub 2 Up and Running");
+
+  clientSub2.subscribe("my channel");
   clientSub2.on("message", (channel, message) => {
-    console.log("Message Received: ");
+    // console.log("Message Received: ");
 
     // Redis Service
     redisService.popMessage();

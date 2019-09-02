@@ -11,7 +11,7 @@ app.listen(process.env.PORT_SERVER_SUB1, () => {
 
   clientSub1.subscribe("my channel");
   clientSub1.on("message", (channel, message) => {
-    console.log("Message Received: ");
+    // console.log("Message Received: ");
 
     // Redis Service
     redisService.popMessage();
