@@ -9,6 +9,6 @@ client.subscribe("my channel");
 app.listen(process.env.PORT_SERVER_SUB1, () => {
   console.log("Server Sub 1");
   client.on("message", (channel, message) => {
-    console.log(`Sub channel "${channel}": ${message}`);
+    // console.log(`Sub channel "${channel}": ${message}`);
   });
 });
