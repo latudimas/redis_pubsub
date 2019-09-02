@@ -9,7 +9,7 @@ exports.publishMessage = (req, res) => {
     let message = req.query.message;
 
     redisService.publishMessageService(message);
-    console.log("Successfully published message");
+    console.log(`Publish a Message: ${message}`);
 
     res.send({
       Publish: message
