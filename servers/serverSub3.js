@@ -1,14 +1,19 @@
 require("dotenv").config();
 const express = require("express");
-const client = require("../config/redisConfig");
+const redis = require("redis");
+const clientSub3 = redis.createClient();
+const redisService = require("../services/redisService");
 
 const app = express();
 
-client.subscribe("my channel");
+clientSub3.subscribe("my channel");
 
 app.listen(process.env.PORT_SERVER_SUB3, () => {
-  console.log("Server Sub 3");
-  client.on("message", (channel, message) => {
-    console.log(`Sub channel "${channel}": ${message}`);
+  console.log("Server Sub 3 Up and Running");
+  clientSub3.on("message", (channel, message) => {
+    console.log("Message Received: ");
+
+    // Redis Service
+    redisService.popMessage();
   });
 });
