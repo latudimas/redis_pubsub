@@ -10,7 +10,7 @@ app.listen(process.env.PORT_SERVER_SUB1, () => {
   console.log("Server Sub 1 Up and Running");
 
   clientSub1.subscribe("my channel");
-  clientSub1.on("message", () => {
+  clientSub1.on("message", (channel, message) => {
     // console.log("Message Received: ");
 
     // Redis Service
