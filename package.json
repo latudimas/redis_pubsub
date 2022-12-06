@@ -11,7 +11,7 @@
   "dependencies": {
     "bluebird": "^3.5.5",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "redis": "^2.8.0",
     "redis-leader": "^0.1.0"
   },
